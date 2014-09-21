@@ -8,3 +8,8 @@
   sudo: yes
   apt: pkg=language-pack-en
   tags: common
+
+- name: Common | Install git
+  sudo: yes
+  apt: pkg=git
+  tags: common
