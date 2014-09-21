@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: dev
   user: vagrant
 
   roles:
@@ -9,4 +9,3 @@
     - mongodb
     - yo
     - express
-    - nginx
