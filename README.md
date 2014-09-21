@@ -13,7 +13,7 @@ Setup MEAN.JS development environment using vagrant and ansible.
 ## Usage
 
 1. Check requirements
-2. Clone this repo: `git clone https://github.com/nicolaspanel/vagrant-ansible-mean.git <project_name> && cd <project_name>`
+2. Clone this repo: `git clone https://github.com/nicolaspanel/vagrant-ansible-mean.git <project_name> && cd <project_name> && rm -rf .git`
 3. Setup and provision vagrant box: `vagrant up`
 4. Take a cup of coffee...
 5. Connect to the vagrant vm: `vagrant ssh`
@@ -21,12 +21,18 @@ Setup MEAN.JS development environment using vagrant and ansible.
 
 Note: part of the provisioning process ensures that Mongo is installed and running on it's default port.
 
-## Installed NPM packages 
-- yo
-- generator-meanjs (yo generator for MEAN.JS)
-- express
-- grunt-cli
-- bower
+## Installed 
+ - Nodejs
+ - Mongodb
+ - Ruby 2.1.2
+ - Gems :
+ 	- compass
+ - NPM packages: 
+	- yo
+	- generator-meanjs (yo generator for MEAN.JS)
+	- express
+	- grunt-cli
+	- bower
 
 VM Configuration
 ----------------
