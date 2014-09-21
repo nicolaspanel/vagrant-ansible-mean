@@ -22,6 +22,7 @@ Setup MEAN.JS development environment using vagrant and ansible.
 Note: part of the provisioning process ensures that Mongo is installed and running on it's default port.
 
 ## Installed 
+ - Git
  - Nodejs
  - Mongodb
  - Ruby 2.1.2
