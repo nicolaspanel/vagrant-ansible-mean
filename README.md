@@ -13,7 +13,7 @@ Setup MEAN.JS development environment using vagrant and ansible.
 ## Usage
 
 1. Check requirements
-2. Clone this repo: `git clone https://github.com/nicolaspanel/vagrant-ansible-mean.git <project_name> && cd <project_name> && rm -rf .git`
+2. Clone this repo: `git clone https://github.com/nicolaspanel/vagrant-ansible-mean.git <project_name> && cd <project_name>`
 3. Setup and provision vagrant box: `vagrant up`
 4. Take a cup of coffee...
 5. Connect to the vagrant vm: `vagrant ssh`
