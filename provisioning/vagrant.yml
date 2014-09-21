@@ -3,9 +3,9 @@
   user: vagrant
 
   roles:
-    - common
-    - ruby
-    - nodejs
-    - mongodb
-    - yo
-    - express
+    - { role: ssh , sudo: True}
+    - { role: common }
+    - { role: ruby, sudo: True }
+    - { role: nodejs }
+    - { role: mongodb }
+    - { role: meanjs }

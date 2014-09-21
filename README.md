@@ -1,78 +1,45 @@
-Getting MEAN with Vagrant and Ansible
-=====================================
+# MEAN.JS with Vagrant and Ansible
 
-This configuration will install the latest versions of MongoDB, Nginx, Node.js, Express, Yeoman, and the Yeoman Angular.js generator. Ruby and the compass gem are installed for the yo build process.
+Setup MEAN.JS development environment using vagrant and ansible.
 
-All running on the Ubuntu 13.10 (Saucy Salamander)
 
-Installation
-------------
-1. Install [Vagrant 1.3.5](http://downloads.vagrantup.com/)
-2. Install [VirtualBox 4.3](https://www.virtualbox.org/wiki/Downloads)
-3. Install [Ansible](http://www.ansibleworks.com/docs/intro_installation.html)
+## Requirements
 
-Running
--------
-Running and provisioning can be handled nicely:
+1. [Vagrant 1.3.5](http://downloads.vagrantup.com/)
+2. [VirtualBox 4.3](https://www.virtualbox.org/wiki/Downloads)
+3. [Ansible](http://www.ansibleworks.com/docs/intro_installation.html)
 
+
+## Usage
+
+1. Check requirements
+2. Clone this repo 
+```shell
+git clone https://github.com/nicolaspanel/vagrant-ansible-mean.git <project_name> && cd <project_name>
 ```
+3. Setup and provision vagrant box
+```shell
 vagrant up
 ```
-
-You can SSH into the provisioned vm like so:
-
+4. Take a cup of coffee...
+5. Connect to the vagrant vm
 ```
 vagrant ssh
 ```
-
-And stop it:
-
+6. Generate project template using yeoman
 ```
-vagrant halt
-```
-
-Voila! You have a development enviroment with the latest and greatest Node.js, MongoDB, and Yeoman.
-
-Note: part of the provisioning process ensures that Mongo is already running on it's default port.
-
-Ansible
--------
-Ansible is configured to run for the vagrant host and you can see the specified private IP in `provisioning/hosts`. 
-
-If for some reason you want to use a different IP, be aware that you will need to update the `Vagrantfile` as well as `provisioning/hosts`.
-
-```ruby
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  # Create a private network, which allows host-only access to the machine
-  # using a specific IP.
-  config.vm.network :private_network, ip: "192.168.111.222"
-end
+cd /vagrant/src/
+yo meanjs
 ```
 
-Ansible installs the following packages:
-* git
-* nodejs
-* mongodb
-* yeoman
-* generator-angular for yeoman
-* express
-* nginx
+Note: part of the provisioning process ensures that Mongo is installed and running on it's default port.
 
-The mongodb and nginx services are started after provisioning takes place.
-
-Synced Folders
---------------
-By default this repo disables directory syncing. If you wish to have this environment checked in as part of the dev process you can create your source directory in the top level of the project and uncomment this line in the `Vagrantfile`:
-
-```ruby
-# config.vm.synced_folder "src/", "/home/vagrant/path/to/your/project"
-```
-
-This will sync your source folders over SSH so you can develop on your host machine.
-
-Ansible Variables
------------------
-The file `provisioning/group_vars/all` contains configurations for your install. This will allow you to configure project directories and things like nginx hostname and the port node js will run on.
+## Installed NPM packages 
+- yo
+- generator-meanjs (yo generator for MEAN.JS)
+- express
+- grunt-cli
+- bower
 
 VM Configuration
 ----------------

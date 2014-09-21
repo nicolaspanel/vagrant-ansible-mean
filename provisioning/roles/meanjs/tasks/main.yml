@@ -1,0 +1,14 @@
+---
+- name: Npm packages for MEAN.JS
+  sudo: yes
+  npm: >
+    name={{ item }}
+    state=present
+    global=yes
+  with_items:
+    - yo
+    - generator-meanjs # yo generator for mean.js
+    - express
+    - grunt-cli
+    - bower
+  tags: mean
