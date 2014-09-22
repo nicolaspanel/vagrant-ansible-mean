@@ -25,6 +25,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder "./src", "/vagrant/src"
 
   config.vm.provision "ansible" do |ansible|
+    ansible.limit = 'all'
+    ansible.extra_vars = { user: "vagrant" }
     ansible.groups = {
       "dev" => ["default"]
     }
